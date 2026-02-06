@@ -1,9 +1,9 @@
 <script>
 window.addEventListener('load', function() {
-  const canvas = document.getElementById("hero-lightpass");
+  const canvas = document.getElementById("hero-scroll");
   const context = canvas.getContext("2d");
-  canvas.width = 1158;
-  canvas.height = 770;
+  canvas.width = 1920;
+  canvas.height = 1080;
   
   const imageUrls = [
     "https://cdn.prod.website-files.com/6924914f484f1fbde64221d6/6985ffa1d960909565e877aa_i_001.avif",
@@ -290,7 +290,7 @@ window.addEventListener('load', function() {
   
   const frameCount = imageUrls.length;
   const images = [];
-  const airpods = { frame: 0 };
+  const heroScroll = { frame: 0 };
   
   for (let i = 0; i < frameCount; i++) {
     const img = new Image();
@@ -300,7 +300,7 @@ window.addEventListener('load', function() {
   
   gsap.registerPlugin(ScrollTrigger);
   
-  gsap.to(airpods, {
+  gsap.to(heroScroll, {
     frame: frameCount - 1,
     snap: "frame",
     ease: "none",
@@ -316,7 +316,7 @@ window.addEventListener('load', function() {
   
   function render() {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(images[airpods.frame], 0, 0); 
+    context.drawImage(images[heroScroll.frame], 0, 0); 
   }
 });
 </script>
