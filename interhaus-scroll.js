@@ -297,7 +297,7 @@ window.addEventListener('load', function() {
     img.src = imageUrls[i];
     images.push(img);
   }
-  
+
   gsap.registerPlugin(ScrollTrigger);
   
   gsap.to(heroScroll, {
@@ -305,6 +305,7 @@ window.addEventListener('load', function() {
     snap: "frame",
     ease: "none",
     scrollTrigger: {
+    	trigger: "#video-trigger",
       scrub: 0.5,
       start: "top top",
       end: "bottom bottom"
